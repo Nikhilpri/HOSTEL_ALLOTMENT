@@ -33,9 +33,10 @@ app.use(session({
         secure: false // Set to true if using https
     }
 }));
-app.get("/test",()=>{
-  console.log("test");
-})
+app.get("/test", (req, res) => {
+  console.log("Test route accessed");
+  res.status(200).send("Test route is working!");
+});
 require('./routes/api-routes')(app)
 
 
