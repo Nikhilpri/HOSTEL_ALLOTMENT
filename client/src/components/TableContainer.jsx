@@ -16,7 +16,7 @@ const TableContainer = () => {
     formData.append('file', file);
 
     try {
-      const response = await fetch(`http://localhost:3001/upload/${Hostel}`, {
+      const response = await fetch(`hostelallotment-production.up.railway.app/upload/${Hostel}`, {
         method: 'POST',
         body: formData,
         credentials:'include'

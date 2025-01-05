@@ -14,14 +14,14 @@ const SeatSelection = () => {
   const { Hostel } = useParams();
   console.log(Hostel);
   useEffect(() => {
-    fetch(`http://localhost:3001/api/check-session`, { credentials: "include" })
+    fetch(`hostelallotment-production.up.railway.app/api/check-session`, { credentials: "include" })
       .then((response) => response.json())
       .then((data) => {
         if (data.isAuthenticated) {
           setUser(data.user);
         }
       });
-    fetch(`http://localhost:3001/api/check-allocation/${Hostel}`, {
+    fetch(`hostelallotment-production.up.railway.app/api/check-allocation/${Hostel}`, {
       credentials: "include",
     })
       .then((response) => response.json())
@@ -31,13 +31,13 @@ const SeatSelection = () => {
           setIsAlloted(data.isAlloted);
         }
       });
-    fetch(`http://localhost:3001/api/blocks/${Hostel}`, {
+    fetch(`hostelallotment-production.up.railway.app/api/blocks/${Hostel}`, {
       credentials: "include",
     })
       .then((response) => response.json())
       .then((data) => setBlocks(data));
 
-    fetch(`http://localhost:3001/api/floors/${Hostel}`, {
+    fetch(`hostelallotment-production.up.railway.app/api/floors/${Hostel}`, {
       credentials: "include",
     })
       .then((response) => response.json())
@@ -47,7 +47,7 @@ const SeatSelection = () => {
   useEffect(() => {
     if (selectedBlock && selectedFloor !== "") {
       fetch(
-        `http://localhost:3001/api/seats/${Hostel}/?block=${selectedBlock}&floor=${selectedFloor}`,
+        `hostelallotment-production.up.railway.app/api/seats/${Hostel}/?block=${selectedBlock}&floor=${selectedFloor}`,
         { credentials: "include" }
       )
         .then((response) => response.json())
@@ -72,7 +72,7 @@ const SeatSelection = () => {
 
   const handleFinalizeSelection = () => {
     if (selectedSeat && user) {
-      fetch(`http://localhost:3001/api/seats/${Hostel}`, {
+      fetch(`hostelallotment-production.up.railway.app/api/seats/${Hostel}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -88,7 +88,7 @@ const SeatSelection = () => {
             // Update the seat status in the UI
             alert("Successfully confirmed your seat");
 
-            fetch(`http://localhost:3001/api/check-allocation/${Hostel}`, {
+            fetch(`hostelallotment-production.up.railway.app/api/check-allocation/${Hostel}`, {
               credentials: "include",
             })
               .then((response) => response.json())

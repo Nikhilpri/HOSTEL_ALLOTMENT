@@ -7,7 +7,7 @@ const EditRow = ({ admissionNumber, currentRoom, fetchStudents }) => {
   const handleEditClick = async () => {
     if (isEditing) {
       try {
-        const response = await fetch(`http://localhost:3001/api/updateRoom/${Hostel}`, {
+        const response = await fetch(`hostelallotment-production.up.railway.app/api/updateRoom/${Hostel}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

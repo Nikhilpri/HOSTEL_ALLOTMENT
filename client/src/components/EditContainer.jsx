@@ -8,7 +8,7 @@ const FetchStudents = () => {
 
   const fetchStudents = useCallback(async () => {
     try {
-      const response = await fetch(`http://localhost:3001/api/students/${Hostel}`, {credentials:'include'});
+      const response = await fetch(`hostelallotment-production.up.railway.app/api/students/${Hostel}`, {credentials:'include'});
       const data = await response.json();
       setStudents(data);
     } catch (error) {

@@ -7,7 +7,7 @@ const HostelCard = ({ imageSrc, altText, title }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/check-session', { credentials: 'include' })
+    fetch('hostelallotment-production.up.railway.app/api/check-session', { credentials: 'include' })
       .then(response => response.json())
       .then(data => {
         setRole(data.role);

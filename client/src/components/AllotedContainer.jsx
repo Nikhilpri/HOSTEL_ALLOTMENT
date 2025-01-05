@@ -8,7 +8,7 @@ const AllotedContainer = () => {
   const handleDownload = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:3001/api/download/${Hostel}`, {
+      const response = await fetch(`hostelallotment-production.up.railway.app/api/download/${Hostel}`, {
         method: 'GET',
         credentials: 'include',
       });

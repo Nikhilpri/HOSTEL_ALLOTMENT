@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const handleClick = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/logout', {
+      const response = await fetch('hostelallotment-production.up.railway.app/api/logout', {
         method: 'GET', // Changed to GET to match your backend route
         credentials: 'include', // Include cookies in the request
       });

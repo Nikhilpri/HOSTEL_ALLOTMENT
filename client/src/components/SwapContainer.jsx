@@ -7,7 +7,7 @@ const SwapContainer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`http://localhost:3001/api/swapRooms/${Hostel}`, {
+    const response = await fetch(`hostelallotment-production.up.railway.app/api/swapRooms/${Hostel}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/check-session', { credentials: 'include' })
+    fetch('hostelallotment-production.up.railway.app/api/check-session', { credentials: 'include' })
       .then(response => response.json())
       .then(data => {
         if(data.role==='admin'){

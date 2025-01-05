@@ -12,7 +12,7 @@ const Login = ({ setIsAuthenticated ,setIsAuthenticatedStudent}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle login logic here
-    fetch('http://localhost:3001/login-details', {
+    fetch('hostelallotment-production.up.railway.app/login-details', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username:username, password:password }),
