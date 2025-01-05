@@ -25,7 +25,7 @@ module.exports = function (app) {
     try {
       const isAuthenticated = await controller.authenticateLogin(req, username, password);
       if (isAuthenticated) {
-        if (username === process.env.admin_username && password === process.env.admin_password) {
+        if (username === "admin" && password === "admin") {
           req.session.role='admin';
           res.json({ success: true, role: 'admin', message: 'Login successful' });
         }
