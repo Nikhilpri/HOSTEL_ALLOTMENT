@@ -13,7 +13,7 @@ const db=require("./Database/mysql")
 
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'https://glittering-kleicha-93a26b.netlify.app/',
   credentials: true
 };
 
