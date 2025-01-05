@@ -33,7 +33,9 @@ app.use(session({
         secure: false // Set to true if using https
     }
 }));
-
+app.get("/test",()=>{
+  console.log("test");
+})
 require('./routes/api-routes')(app)
 
 
